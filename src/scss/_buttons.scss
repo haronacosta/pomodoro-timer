@@ -1,0 +1,57 @@
+.options-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+ 
+
+  & [class~='btn'] {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 12px;
+    color: $primary;
+    flex: 1 100%;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    transition: all 0.5s ease-in-out;
+    &.active {
+      background-color: rgba($color: $dark, $alpha: 0.4);
+    }
+  }
+}
+
+.btn-container {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  & .btn-run {
+    background-color: $white;
+    border-radius: 8px;
+    border: none;
+    color: $btn-text;
+    font-size: 32px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 200px;
+  }
+
+  & .btn-reset {
+    background-color: transparent;
+    border: none;
+    color: rgba($color: $dark, $alpha: 0.4);
+    font-size: 16px;
+    width: 60px;
+  }
+}
