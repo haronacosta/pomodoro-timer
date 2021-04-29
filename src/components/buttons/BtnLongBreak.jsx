@@ -1,8 +1,16 @@
 import React from 'react';
 
-const BtnLongBreak = ({ setTime, active, setActive }) => {
+const BtnLongBreak = ({ setTime, active, setActive, setInitial }) => {
   const newTime = () => {
-    setTime((t) => ({ ...t, minutes: 15, seconds: 0 }));
+    const newTime = {
+      minutes: 15,
+      seconds: 0,
+    };
+
+    setTime((t) => ({ ...t, ...newTime, run: false }));
+
+    setInitial(newTime);
+
     setActive('long');
   };
 

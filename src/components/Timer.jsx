@@ -15,6 +15,11 @@ export const Timer = () => {
 
   const [active, setActive] = useState('pomodoro');
 
+  const [initial, setInitial] = useState({
+    minutes: 25,
+    seconds: 0,
+  });
+
   const [time, setTime] = useState(initialTime);
 
   useEffect(() => {
@@ -43,18 +48,29 @@ export const Timer = () => {
   return (
     <div className="timer">
       <div className="options-buttons">
-        <BtnPomodoro setTime={setTime} active={active} setActive={setActive} />
-        <BtnLongBreak setTime={setTime} active={active} setActive={setActive} />
+        <BtnPomodoro
+          setTime={setTime}
+          active={active}
+          setActive={setActive}
+          setInitial={setInitial}
+        />
+        <BtnLongBreak
+          setTime={setTime}
+          active={active}
+          setActive={setActive}
+          setInitial={setInitial}
+        />
         <BtnShortBreak
           setTime={setTime}
           active={active}
           setActive={setActive}
+          setInitial={setInitial}
         />
       </div>
       <Clock {...time} />
       <div className="btn-container">
         <BtnRun setTime={setTime} run={time.run} />
-        <BtnReset />
+        <BtnReset initial={initial} setTime={setTime} />
       </div>
     </div>
   );

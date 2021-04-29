@@ -1,10 +1,15 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import resetIcon from '../../icons/backward-solid.svg';
+import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 
-const BtnReset = () => {
+const BtnReset = ({ setTime, initial }) => {
+  const handleTime = () => {
+    setTime((t) => ({ ...t, ...initial, run: false }));
+  };
+
   return (
-    <button className="btn-reset">
-      <img src={resetIcon} alt="" />
+    <button className="btn-reset" onClick={handleTime}>
+      <FontAwesomeIcon icon={faRedoAlt} />
     </button>
   );
 };

@@ -1,15 +1,21 @@
 .header {
   background-color: rgba($color: $secundary, $alpha: 0.6);
   border-radius: 15px;
-  margin-top: 1.5rem;
 }
 
 .header-title {
   color: $primary;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding-bottom: 0.9rem;
   padding-top: 0.9rem;
   text-align: center;
   text-transform: uppercase;
 }
+
+@media only screen and (min-width: 768px) {
+  .header-title {
+    font-size: 2rem;
+  }
+ }
+

@@ -1,8 +1,16 @@
 import React from 'react';
 
-const BtnPomodoro = ({ setTime, active, setActive }) => {
+const BtnPomodoro = ({ setTime, active, setActive, setInitial }) => {
   const newTime = () => {
-    setTime((t) => ({ ...t, minutes: 25, seconds: 0 }));
+    const newTime = {
+      minutes: 25,
+      seconds: 0,
+    };
+
+    setTime((t) => ({ ...t, ...newTime, run: false }));
+
+    setInitial(newTime);
+
     setActive('pomodoro');
   };
   return (
