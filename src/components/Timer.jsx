@@ -8,8 +8,8 @@ import Clock from './Clock';
 
 export const Timer = () => {
   const initialTime = {
-    minutes: 25,
-    seconds: 0,
+    minutes: 0,
+    seconds: 10,
     run: false,
   };
 
@@ -22,12 +22,15 @@ export const Timer = () => {
 
   const [time, setTime] = useState(initialTime);
 
+  const [finish, setFinish] = useState(false);
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (time.run) {
         if (time.seconds === 0) {
           if (time.minutes === 0) {
             setTime({ ...time, seconds: 0, minutes: 0, run: false });
+            setFinish(true);
             clearInterval(timer);
           } else {
             setTime({ ...time, seconds: 59, minutes: time.minutes - 1 });
@@ -67,7 +70,9 @@ export const Timer = () => {
           setInitial={setInitial}
         />
       </div>
-      <Clock {...time} />
+
+      <Clock {...time} finish={finish} />
+
       <div className="btn-container">
         <BtnRun setTime={setTime} run={time.run} />
         <BtnReset initial={initial} setTime={setTime} />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Clock = ({ minutes, seconds }) => {
+const Clock = ({ minutes, seconds, finish }) => {
   const [clock, setClock] = useState({
     minutes: '00',
     seconds: '00',
@@ -24,6 +24,7 @@ const Clock = ({ minutes, seconds }) => {
   return (
     <div className="clock">
       {clock.minutes}:{clock.seconds}
+      {finish && <div className="finish">It´s over</div>}
     </div>
   );
 };
