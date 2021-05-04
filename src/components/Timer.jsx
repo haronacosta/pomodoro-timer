@@ -8,8 +8,8 @@ import Clock from './Clock';
 
 export const Timer = () => {
   const initialTime = {
-    minutes: 25,
-    seconds: 0,
+    minutes: 0,
+    seconds: 10,
     run: false,
   };
 
@@ -49,33 +49,36 @@ export const Timer = () => {
   }, [time]);
 
   return (
-    <div className="timer">
-      <div className="options-buttons">
+    <div className='timer'>
+      <div className='options-buttons'>
         <BtnPomodoro
           setTime={setTime}
           active={active}
           setActive={setActive}
           setInitial={setInitial}
+          setFinish={setFinish}
         />
         <BtnLongBreak
           setTime={setTime}
           active={active}
           setActive={setActive}
           setInitial={setInitial}
+          setFinish={setFinish}
         />
         <BtnShortBreak
           setTime={setTime}
           active={active}
           setActive={setActive}
           setInitial={setInitial}
+          setFinish={setFinish}
         />
       </div>
 
       <Clock {...time} finish={finish} />
 
-      <div className="btn-container">
+      <div className='btn-container'>
         <BtnRun setTime={setTime} run={time.run} />
-        <BtnReset initial={initial} setTime={setTime} />
+        <BtnReset initial={initial} setTime={setTime} setFinish={setFinish} />
       </div>
     </div>
   );

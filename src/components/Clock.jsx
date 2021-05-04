@@ -22,10 +22,12 @@ const Clock = ({ minutes, seconds, finish }) => {
   }, [minutes, seconds]);
 
   return (
-    <div className="clock">
-      {clock.minutes}:{clock.seconds}
-      {finish && <div className="finish">It´s over</div>}
-    </div>
+    <>
+      <div className='clock'>
+        {clock.minutes}:{clock.seconds}
+      </div>
+      {finish && <div className='finish'>It´s over</div>}
+    </>
   );
 };
 

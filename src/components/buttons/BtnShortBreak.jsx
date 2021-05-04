@@ -1,6 +1,12 @@
 import React from 'react';
 
-const BtnShortBreak = ({ setTime, active, setActive, setInitial }) => {
+const BtnShortBreak = ({
+  setTime,
+  active,
+  setActive,
+  setInitial,
+  setFinish,
+}) => {
   const newTime = () => {
     const newTime = {
       minutes: 5,
@@ -9,6 +15,8 @@ const BtnShortBreak = ({ setTime, active, setActive, setInitial }) => {
     setTime((t) => ({ ...t, ...newTime, run: false }));
 
     setInitial(newTime);
+
+    setFinish((f) => !f);
 
     setActive('short');
   };
