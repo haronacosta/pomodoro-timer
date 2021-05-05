@@ -8,8 +8,8 @@ import Clock from './Clock';
 
 export const Timer = () => {
   const initialTime = {
-    minutes: 0,
-    seconds: 10,
+    minutes: 25,
+    seconds: 0,
     run: false,
   };
 
