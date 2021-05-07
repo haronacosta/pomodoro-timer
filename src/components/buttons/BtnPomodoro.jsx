@@ -11,7 +11,7 @@ const BtnPomodoro = ({ setTime, active, setActive, setInitial, setFinish }) => {
 
     setInitial(newTime);
 
-    setFinish((f) => !f);
+    setFinish(false);
 
     setActive('pomodoro');
   };

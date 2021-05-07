@@ -7,16 +7,18 @@ const BtnShortBreak = ({
   setInitial,
   setFinish,
 }) => {
+
   const newTime = () => {
     const newTime = {
       minutes: 5,
       seconds: 0,
     };
+    
     setTime((t) => ({ ...t, ...newTime, run: false }));
 
     setInitial(newTime);
 
-    setFinish((f) => !f);
+    setFinish(false);
 
     setActive('short');
   };

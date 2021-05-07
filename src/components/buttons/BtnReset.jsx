@@ -4,7 +4,7 @@ import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 
 const BtnReset = ({ setTime, initial, setFinish }) => {
   const handleTime = () => {
-    setFinish((f) => !f);
+    setFinish(false);
 
     setTime((t) => ({ ...t, ...initial, run: false }));
   };

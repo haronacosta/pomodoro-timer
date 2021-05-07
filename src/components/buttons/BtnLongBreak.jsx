@@ -17,7 +17,7 @@ const BtnLongBreak = ({
 
     setInitial(newTime);
 
-    setFinish((f) => !f);
+    setFinish(false);
 
     setActive('long');
   };
